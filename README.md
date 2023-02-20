@@ -55,3 +55,8 @@ nssm.exe install  FfmpegServer  "D:\ffmpeg-server\index-win.exe"
 # 启动服务
 nssm.exe start FfmpegServer
 ```
+
+#### QQ交流群
+
+![WX20210922-091703.png](https://cdn.wangzc.wang/uPic/WX20210922-09170315%20.png)
+
