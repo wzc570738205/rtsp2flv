@@ -9,7 +9,7 @@ export default {
     data () {
         return {
           id: "1",
-          rtsp: "rtsp://admin:dhlrw12345@192.168.0.101:554/h264/ch1/main/av_stream",
+          rtsp: "rtsp://admin:dhlrw12345@19x.16x.0.101:554/h264/ch1/main/av_stream",
             player: null
         }
     },
@@ -20,7 +20,7 @@ export default {
                 this.player = flvjs.createPlayer({
                     type: "flv",
                     isLive: true,
-                    url: `ws://localhost:8888/rtsp/${this.id}/?url=${this.rtsp}`
+                    url: `ws://localhost:8888/rtsp/${this.id}/?url=${btoa(this.rtsp)}`
                 });
                 this.player.attachMediaElement(video);
                 try {
@@ -30,19 +30,6 @@ export default {
                     console.log(error);
                 };
             }
-            // if (video) {
-            //     this.player = flvjs.createPlayer({
-            //         type: "flv",
-            //         url: `/static/test.flv`
-            //     });
-            //     this.player.attachMediaElement(video);
-            //     try {
-            //         this.player.load();
-            //         this.player.play();
-            //     } catch (error) {
-            //         console.log(error);
-            //     };
-            // }
         }
     },
     beforeDestroy () {

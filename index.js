@@ -3,13 +3,16 @@ const fs = require('fs')
 const path = require('path');
 console.log('path: ', path);
 console.log('fs: ', fs)
+
 const expressWebSocket = require('express-ws')
 const ffmpeg = require('fluent-ffmpeg')
-///判断当前系统
+//判断当前系统
 const os = require('os')
 const platform = os.platform()
 console.log('platform: ', platform)
 console.log('process.cwd()', process.cwd())
+
+//文件加权
 const pp =  path.normalize(process.cwd() + '/bin/' + platform + '/ffmpeg')
 console.log('pp: ', pp);
 fs.chmod(pp, '777', function () {})

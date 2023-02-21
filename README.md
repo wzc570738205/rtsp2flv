@@ -1,8 +1,8 @@
 ## RTSP转FLV流服务
 
 本项目提供了一个`rtsp`转`flv`流的服务，可以将`rtsp`流转换为`flv`流。如果不需要定制开发，可以直接使用`dist`文件夹下的可执行文件。使用见`部署章节`
-
-访问url格式：`ws://localhost:8888/rtsp/<id>/?url=<rtsp 地址>`
+注意：rtsp流地址需要进行base64编码，
+访问url格式：`ws://localhost:8888/rtsp/<id>/?url=btoa(<rtsp 地址>)`
 - id: 用于区分不同的rtsp流，可以是任意字符串，如没有可以默认写死为`1`
 - rtsp 地址: rtsp流地址。格式为`rtsp://username:password@ip:port/xxx`。
 ### 安装依赖
@@ -23,7 +23,7 @@ node端启动后，会监听`8888`端口，
 ```js
 //比如rtsp流的地址为:`rtsp://admin:19x.xxx`
 
-ws://localhost:8888/rtsp/1/?url=rtsp://admin:19x.xxx
+ws://localhost:8888/rtsp/1/?url=btoa('rtsp://admin:19x.xxx')
 ```
 具体DEMO见`front`文件夹
 
