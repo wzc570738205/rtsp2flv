@@ -23,7 +23,7 @@ node端启动后，会监听`8888`端口，
 ```js
 //比如rtsp流的地址为:`rtsp://admin:19x.xxx`
 
-ws://localhost:8888/rtsp/1/?url=btoa('rtsp://admin:19x.xxx')
+`ws://localhost:8888/rtsp/1/?url=${btoa('rtsp://admin:19x.xxx')}`
 ```
 具体DEMO见`front`文件夹
 
