@@ -21,7 +21,7 @@ npm run dev
 
 node端启动后，会监听`8888`端口，
 
-前端访问的地址为：（注意resp接口需要使用btoa base64转换一下）：
+前端访问的地址为：（`注意resp接口需要使用btoa base64转换一下`）：
 ```js
 //比如rtsp流的地址为:`rtsp://admin:19x.xxx`
 
